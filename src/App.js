@@ -1,20 +1,21 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { IndicesPage } from "./pages/IndicesPage";
+import { IndexDetailsPage } from "./pages/IndexDetailsPage";
 
 function App() {
   return (
-    <div className="Container">
+    <div className="container">
       Stockmarket
       <Link to="/crypto">Crypto</Link>
       <Link to="/currencies">Currencies</Link>
-      <Link to="/indices">Indices</Link>
+      <Link to="/indexes">Indices</Link>
       <Link to="/markets">Markets</Link>
       <Switch>
+        <Route path="/indexes/:ticker" component={IndexDetailsPage} />
         <Route path="/crypto">crypto</Route>
         <Route path="/currencies">currencies</Route>
-
-        <Route path="/indices">
+        <Route path="/indexes/">
           <IndicesPage />
         </Route>
 
