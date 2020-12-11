@@ -1,5 +1,7 @@
 import React from 'react'
 import {Switch, Route, Link} from 'react-router-dom'
+import CurrenciesDetailPage from './pages/CurrenciesDetailPage';
+import CurrenciesPage from './pages/CurrenciesPage'
 
 function App() {
   return (
@@ -11,12 +13,14 @@ function App() {
     <Link to="/markets">Markets</Link>
 
     <Switch>
+    <Route path="/currencies/:ticker" component={CurrenciesDetailPage} />
       <Route path="/crypto">
         crypto
       </Route>
       <Route path="/currencies">
-      currencies
+      <CurrenciesPage />
       </Route>
+      
 
       <Route path="/indices">
     indices
