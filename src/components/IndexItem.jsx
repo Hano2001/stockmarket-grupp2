@@ -9,10 +9,12 @@ export default function IndexItem({ index }) {
         <p>({index.ticker})</p>
         <div className="col-md-4 ml-3">
           <div className="row">
-            <h6>Current price: €{index.price}</h6>
+            <h4>Current price: &nbsp;</h4>
+            <h4> €{index.price}</h4>
           </div>
           <div className="row">
-            <h6>Change 1D: {index.today}%</h6>
+            <h3>Change 1D: &nbsp;</h3>
+            <h4>{index.today}%</h4>
           </div>
         </div>
 

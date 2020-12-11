@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 export const IndexDetailsPage = props => {
   const [indexInfo, setIndexInfo] = useState(null);
-  console.log(props);
 
   useEffect(() => {
     const ticker = props.match.params.ticker;
@@ -12,13 +11,13 @@ export const IndexDetailsPage = props => {
       .then(res => res.json())
       .then(data => setIndexInfo(data));
   }, []);
-  console.log(indexInfo);
 
   return (
     <div className="container">
       <div className="row">
-        {!indexInfo && <p>Loading...</p>}
-        {indexInfo && (
+        {!indexInfo ? (
+          <p>Loading...</p>
+        ) : (
           <>
             <div className="col-md-12">
               <h2>{indexInfo.name}</h2>
