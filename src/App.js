@@ -15,7 +15,7 @@ function App() {
         <Route path="/crypto">
           <CryptoList />
         </Route>
-        <Route exact path="/crypto/:id" component={CryptoDetails}></Route>
+        <Route path="/crypto/:ticker" component={CryptoDetails}></Route>
 
         <Route path="/currencies">currencies</Route>
 
