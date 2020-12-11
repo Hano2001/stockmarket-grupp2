@@ -12,17 +12,13 @@ function App() {
       <Link to="/indices">Indices</Link>
       <Link to="/markets">Markets</Link>
       <Switch>
+        ¨<Route path="/crypto/:ticker" component={CryptoDetails}></Route>
         <Route path="/crypto">
           <CryptoList />
         </Route>
-        <Route path="/crypto/:ticker" component={CryptoDetails}></Route>
-
         <Route path="/currencies">currencies</Route>
-
         <Route path="/indices">indices</Route>
-
         <Route path="/markets">markets</Route>
-
         <Route path="/"></Route>
       </Switch>
     </div>

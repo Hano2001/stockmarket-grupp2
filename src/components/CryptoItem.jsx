@@ -7,7 +7,7 @@ export default function CryptoItem({item}) {
         <p>NAME: {item.name}</p>
         <p>LINK: {item.link}</p>
         <p>TODAY: {item.today}</p>
-        <Link to={`/crypto/${item.ticker}`} className="btn btn-block btn-danger">Detaljer</Link>
+        <Link  className="btn btn-block btn-danger" to={`/crypto/${item.ticker}`}>Detaljer</Link>
         </div>
     )
       
