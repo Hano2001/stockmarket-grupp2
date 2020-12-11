@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 export default function CryptoDetails(props) {
     const id = props.match.params.ticker
     const[cryptoItem, setCryptoItem] = useState(null)
+    console.log("BAJS");
 
     useEffect(()=> {
         const url = `https://market-data-collector.firebaseio.com/market-collector/crypto/${id}.json`;
