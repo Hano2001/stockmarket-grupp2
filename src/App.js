@@ -4,6 +4,7 @@ import { IndicesPage } from "./pages/IndicesPage";
 import { IndexDetailsPage } from "./pages/IndexDetailsPage";
 import { MarketListPage } from "./pages/MarketListPage";
 import { StockListPage } from "./pages/StockListPage";
+import { StockDetailPage } from "./pages/StockDetailPage";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
           <IndicesPage />
         </Route>
 
-        <Route path="/markets/:market" component={StockListPage}/>
+        <Route path="/markets/:market/:stock" component={StockDetailPage} />
+        <Route path="/markets/:market" component={StockListPage} />
         <Route path="/markets">
           <MarketListPage />
         </Route>

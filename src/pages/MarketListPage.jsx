@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { MarketItem } from '../components/MarketItem';
 
 export const MarketListPage = () => {
   const [marketList, setMarketList] = useState(null);
@@ -20,11 +20,7 @@ export const MarketListPage = () => {
       <ul>
         {marketList && Object.keys(marketList).map(market => {
           return (
-            <li key={market}>
-              <Link to={`/markets/${market}`}>
-                {market}
-              </Link>
-            </li>
+           <MarketItem key={market} marketName={market}/>
           )
         })}
       </ul>
