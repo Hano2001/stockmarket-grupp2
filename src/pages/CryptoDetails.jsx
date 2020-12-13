@@ -13,10 +13,18 @@ export default function CryptoDetails(props) {
         .then(data => setCryptoItem(data))
     },[])
     {console.log(cryptoItem)}
-    return (
-        
-        <div>
-             
+    return ( <div>
+         {! cryptoItem  && 
+            <p>Loading...</p>
+         }
+
+         {cryptoItem && ( <div>
+             <p>NAME: {cryptoItem.name}</p>
+             <p>PRICE: {cryptoItem.price}</p>
+             <p>TODAY: {cryptoItem.today}</p>
+             </div>
+         )}
         </div>
+        
     )
 }
