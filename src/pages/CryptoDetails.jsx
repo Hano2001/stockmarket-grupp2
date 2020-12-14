@@ -13,19 +13,27 @@ export default function CryptoDetails(props) {
         .then(data => setCryptoItem(data))
     },[id])
     
-    return ( <div>
-         {! cryptoItem  && 
+    return (
+        <div className="container">
+            <div className="row">
+        
+         {! cryptoItem  ? (
             <p>Loading...</p>
-         }
-
-         {cryptoItem && ( <div className="col-md-12">
+         ) : (
+        <>
+             <div className="col-md-12">
+             
              <h2>NAME: {cryptoItem.name}</h2>
-             <h5>PRICE: {cryptoItem.price}</h5>
-             <div className="col-md-2">Change 1D {cryptoItem.today}%</div>
+             <h5>Current Trading At: {cryptoItem.price}</h5>
              </div>
+             <div className="col-md-2">Change 1D: {cryptoItem.today}%</div>
+             <div className="col-md-2">Source: {cryptoItem.source}</div>
+             <div className="col-md-3">Link: {cryptoItem.link}</div>
+             </>
          )}
+        
         </div>
-
+        </div>
 
         
     )
