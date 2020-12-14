@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 
 export default function CurrenciesDetailPage(props) {
     
-    const [currencieItem, setCurrencieItem] = useState(null)
+    const [currencyItem, setCurrencyItem] = useState(null)
     console.log(props)
     useEffect(() => {
         const ticker  = props.match.params.ticker
@@ -10,13 +10,13 @@ export default function CurrenciesDetailPage(props) {
     
     fetch(url)
     .then(res => res.json())
-    .then(data => setCurrencieItem(data))
+    .then(data => setCurrencyItem(data))
     
     }, [])
     return (
         <div className="container">
             <div className="row">
-            {!currencieItem ? <p>Loading</p> : <h2> {currencieItem.name}</h2> }
+            {!currencyItem ? <p>Loading</p> : <h2> {currencyItem.name}</h2> }
             
                 
                 

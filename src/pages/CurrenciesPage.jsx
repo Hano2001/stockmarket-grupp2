@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CurrencieItem from "../components/CurrencieItem";
+import CurrencyItem from "../components/CurrencyItem";
 
 
 export default function CurrenciesPage() {
@@ -20,10 +20,10 @@ export default function CurrenciesPage() {
       {!currenciesList && <p>Loading</p>}
          <div className="row">
         {currenciesList &&
-          Object.entries(currenciesList).map(currencieItem => {
-            const key = currencieItem[0];
-            const value = currencieItem[1];
-            return <CurrencieItem key={key} currencie={value} />;
+          Object.entries(currenciesList).map(currencyItem => {
+            const key = currencyItem[0];
+            const value = currencyItem[1];
+            return <CurrencyItem key={key} currency={value} />;
           })}
       </div>
     </div>
