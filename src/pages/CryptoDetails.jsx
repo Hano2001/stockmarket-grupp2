@@ -18,13 +18,15 @@ export default function CryptoDetails(props) {
             <p>Loading...</p>
          }
 
-         {cryptoItem && ( <div>
-             <p>NAME: {cryptoItem.name}</p>
-             <p>PRICE: {cryptoItem.price}</p>
-             <p>TODAY: {cryptoItem.today}</p>
+         {cryptoItem && ( <div className="col-md-12">
+             <h2>NAME: {cryptoItem.name}</h2>
+             <h5>PRICE: {cryptoItem.price}</h5>
+             <div className="col-md-2">Change 1D {cryptoItem.today}%</div>
              </div>
          )}
         </div>
+
+
         
     )
 }
