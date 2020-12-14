@@ -13,6 +13,7 @@ export default function Navbar() {
       <Link className="nav-link" to="/indexes">
         Indices
       </Link>
+
       <Link className="nav-link" to="/markets">
         Markets
       </Link>

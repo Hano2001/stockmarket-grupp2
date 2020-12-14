@@ -5,7 +5,6 @@ export const IndexDetailsPage = props => {
   const ticker = props.match.params.ticker;
 
   useEffect(() => {
-    
     const url = `https://market-data-collector.firebaseio.com/market-collector/indexes/se/${ticker}.json`;
 
     fetch(url)
@@ -24,7 +23,14 @@ export const IndexDetailsPage = props => {
               <h2>{indexInfo.name}</h2>
               <h5>Current trading at: €{indexInfo.price}</h5>
             </div>
-            <div className="col-md-2">Change 1D {indexInfo.today}%</div>
+            <div className="col-md-2">
+              Change 1D &nbsp;
+              <span
+                className={indexInfo.today > 0 ? "text-primary" : "text-danger"}
+              >
+                {indexInfo.today}
+              </span>
+            </div>
             <div className="col-md-2">Change 1W {indexInfo.w1}%</div>
             <div className="col-md-2">Change 3Y {indexInfo.y3}%</div>
             <div className="col-md-2">Change 5Y {indexInfo.y5}%</div>

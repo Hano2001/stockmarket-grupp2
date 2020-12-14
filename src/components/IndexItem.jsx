@@ -14,7 +14,9 @@ export default function IndexItem({ index }) {
           </div>
           <div className="row">
             <h4>Change 1D: &nbsp;</h4>
-            <h4>{index.today}%</h4>
+            <h4 className={index.today > 0 ? "text-primary" : "text-danger"}>
+              {index.today}%
+            </h4>
           </div>
         </div>
 
