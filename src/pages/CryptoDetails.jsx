@@ -26,9 +26,9 @@ export default function CryptoDetails(props) {
              <h2>NAME: {cryptoItem.name}</h2>
              <h5>Current Trading At: {cryptoItem.price}</h5>
              </div>
-             <div className="col-md-2">Change 1D: {cryptoItem.today}%</div>
-             <div className="col-md-2">Source: {cryptoItem.source}</div>
-             <div className="col-md-3">Link: {cryptoItem.link}</div>
+             <div className="col-md-3">Change 1D: {cryptoItem.today}%</div>
+             <div className="col-md-3">Source: {cryptoItem.source}</div>
+             <div className="col-md-6">Link: {cryptoItem.link}</div>
              </>
          )}
         
