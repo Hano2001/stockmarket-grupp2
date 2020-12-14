@@ -26,9 +26,11 @@ export const StockListPage = (props) => {
               key={key}
               market={market}
               stock={value.ticker}
-            />
-            <div>{value.today}</div>
-            </>
+            >
+              <p>Price: {value.price} USD</p>
+              <p>% Change: {value.today}%</p>
+            </StockItem>
+          </>
           )
         })}
       </ul>

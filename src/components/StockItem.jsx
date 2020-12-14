@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const StockItem = ({ market, stock }) => {
+export const StockItem = ({ market, stock, children }) => {
   return (
-    <li>
+    <li
+      className="border p-2">
       <Link to={`/markets/${market}/${stock}`}>
         {stock}
       </Link>
+      {children}
     </li>
   )
 }
