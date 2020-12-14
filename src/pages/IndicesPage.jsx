@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
 import IndexItem from "../components/IndexItem";
+import { useFetch } from "../hooks/useFetch";
 
 export const IndicesPage = () => {
-  const [indicesList, setIndicesList] = useState(null);
-
-  useEffect(() => {
-    const url =
-      "https://market-data-collector.firebaseio.com/market-collector/indexes/se.json";
-
-    fetch(url)
-      .then(res => res.json())
-      .then(data => setIndicesList(data));
-  }, []);
+  const indicesList = useFetch(
+    "https://market-data-collector.firebaseio.com/market-collector/indexes/se.json"
+  );
 
   return (
     <div className="container">
