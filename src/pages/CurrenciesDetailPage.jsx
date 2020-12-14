@@ -1,19 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
+import {useFetch} from '../hooks/useFetch'
 
 export default function CurrenciesDetailPage(props) {
     
-    const [currencyItem, setCurrencyItem] = useState(null)
-    
     const ticker  = props.match.params.ticker
-    useEffect(() => {
-        
-        const url = `https://market-data-collector.firebaseio.com/market-collector/currencies/sek/${ticker}.json`
+    const url = `https://market-data-collector.firebaseio.com/market-collector/currencies/sek/${ticker}.json`
+    const currencyItem = useFetch(url)
     
-    fetch(url)
-    .then(res => res.json())
-    .then(data => setCurrencyItem(data))
-    
-    }, [ticker])
     return (
         <div className="container">
             {!currencyItem ? <p>Loading</p> : 

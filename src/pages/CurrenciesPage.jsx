@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CurrencyItem from "../components/CurrencyItem";
+import { useFetch } from '../hooks/useFetch';
 
 
 export default function CurrenciesPage() {
-  const [currenciesList, setCurrenciesList] = useState(null);
-
-  useEffect(() => {
-    const url =
-      "https://market-data-collector.firebaseio.com/market-collector/currencies/sek.json";
-
-        fetch(url)
-      .then(res => res.json())
-      .then(data => setCurrenciesList(data));
-      
-  }, []);
+  
+    const url = "https://market-data-collector.firebaseio.com/market-collector/currencies/sek.json";
+    const currenciesList =useFetch(url)
 
   return (
     <div className="container">
