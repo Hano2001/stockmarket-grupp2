@@ -13,7 +13,7 @@ export default function IndexItem({ index }) {
             <h4> €{index.price}</h4>
           </div>
           <div className="row">
-            <h3>Change 1D: &nbsp;</h3>
+            <h4>Change 1D: &nbsp;</h4>
             <h4>{index.today}%</h4>
           </div>
         </div>
