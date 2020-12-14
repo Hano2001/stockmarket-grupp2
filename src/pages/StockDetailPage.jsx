@@ -1,17 +1,23 @@
 import React from 'react';
-import {useFetch} from '../hooks/useFetch'
+import { Link } from 'react-router-dom';
+import { useFetch } from '../hooks/useFetch';
 
 export const StockDetailPage = (props) => {
   const market = props.match.params.market;
   const stock = props.match.params.stock;
   const stockItem = useFetch(`https://market-data-collector.firebaseio.com/market-collector/markets/${market}/${stock}.json`)
-  
+
   return (
     <div>
       {!stockItem && <p>Loading...</p>}
       {stockItem &&
         <>
-          <h5>{market}</h5>
+          <Link to={`/markets`}>
+            <h5>Markets</h5>
+          </Link>
+          <Link to={`/markets/${market}`}>
+            <h5>/ {market}</h5>
+          </Link>
           <h1>{stockItem.name}</h1>
           <ul>
             <li>Price: {stockItem.price} USD</li>

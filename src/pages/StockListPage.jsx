@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { StockItem } from '../components/StockItem';
-import {useFetch} from '../hooks/useFetch'
+import { useFetch } from '../hooks/useFetch';
 
 export const StockListPage = (props) => {
   const market = props.match.params.market;
@@ -10,19 +11,23 @@ export const StockListPage = (props) => {
     <>
       {!stockList && <p>Loading...</p>}
       <ul>
-        <h5>{market}</h5>
+        <Link to={`/markets`}>
+          <h5>Markets</h5>
+        </Link>
+        <h5>/ {market}</h5>
         {stockList && Object.entries(stockList).map(stock => {
           const [key, value] = stock;
-          return (<>
-            <StockItem
-              key={key}
-              market={market}
-              stock={value.ticker}
-            >
-              <p>Price: {value.price} USD</p>
-              <p>% Change: {value.today}%</p>
-            </StockItem>
-          </>
+          return (
+            <>
+              <StockItem
+                key={key}
+                market={market}
+                stock={value.ticker}
+              >
+                <p>Price: {value.price} USD</p>
+                <p>% Change: {value.today}%</p>
+              </StockItem>
+            </>
           )
         })}
       </ul>
