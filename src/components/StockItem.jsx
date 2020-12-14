@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export const StockItem = ({ market, stock }) => {
   return (
     <li>
-      <Link to={`/markets/${market}/${stock.ticker}`}>
-        {stock.name}
+      <Link to={`/markets/${market}/${stock}`}>
+        {stock}
       </Link>
     </li>
   )

@@ -21,12 +21,14 @@ export const StockListPage = (props) => {
       <ul>
         {stockList && Object.entries(stockList).map(stock => {
           const [key, value] = stock;
-          return (
+          return (<>
             <StockItem
               key={key}
               market={market}
-              stock={value}
+              stock={value.ticker}
             />
+            <div>{value.today}</div>
+            </>
           )
         })}
       </ul>

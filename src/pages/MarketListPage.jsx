@@ -18,9 +18,9 @@ export const MarketListPage = () => {
     <>
       {!marketList && <p>Loading...</p>}
       <ul>
-        {marketList && Object.keys(marketList).map(market => {
+        {marketList && Object.keys(marketList).map(marketName => {
           return (
-           <MarketItem key={market} marketName={market}/>
+           <MarketItem key={marketName} marketName={marketName}/>
           )
         })}
       </ul>
