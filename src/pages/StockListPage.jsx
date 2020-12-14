@@ -19,6 +19,7 @@ export const StockListPage = (props) => {
     <>
       {!stockList && <p>Loading...</p>}
       <ul>
+        <h5>{market}</h5>
         {stockList && Object.entries(stockList).map(stock => {
           const [key, value] = stock;
           return (<>
