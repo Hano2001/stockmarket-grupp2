@@ -10,24 +10,22 @@ export const StockListPage = (props) => {
   return (
     <>
       {!stockList && <p>Loading...</p>}
+      <Link to={`/markets`}>
+        <h5>Markets</h5>
+      </Link>
+      <h5>/ {market}</h5>
       <ul>
-        <Link to={`/markets`}>
-          <h5>Markets</h5>
-        </Link>
-        <h5>/ {market}</h5>
         {stockList && Object.entries(stockList).map(stock => {
           const [key, value] = stock;
           return (
-            <>
-              <StockItem
-                key={key}
-                market={market}
-                stock={value.ticker}
-              >
-                <p>Price: {value.price} USD</p>
-                <p>% Change: {value.today}%</p>
-              </StockItem>
-            </>
+            <StockItem
+              key={key}
+              market={market}
+              stock={value.ticker}
+            >
+              <p>Price: {value.price} USD</p>
+              <p>% Change: {value.today}%</p>
+            </StockItem>
           )
         })}
       </ul>
