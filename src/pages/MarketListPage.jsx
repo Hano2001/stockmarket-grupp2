@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { MarketItem } from '../components/MarketItem';
+import {useFetch} from '../hooks/useFetch'
 
 export const MarketListPage = () => {
-  const [marketList, setMarketList] = useState(null);
 
-  useEffect(() => {
-    const url = "https://market-data-collector.firebaseio.com/market-collector/markets.json";
-    async function fetchData(url) {
-      const res = await fetch(url);
-      const data = await res.json();
-      setMarketList(data)
-    }
-    fetchData(url)
-  }, []);
+  const marketList = useFetch("https://market-data-collector.firebaseio.com/market-collector/markets.json")
 
   return (
     <>

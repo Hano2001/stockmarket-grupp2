@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import {useFetch} from '../hooks/useFetch'
 
 export const StockDetailPage = (props) => {
-  const [stockItem, setStockItem] = useState(null);
   const market = props.match.params.market;
   const stock = props.match.params.stock;
-
-  useEffect(() => {
-    const url = `https://market-data-collector.firebaseio.com/market-collector/markets/${market}/${stock}.json`;
-    async function fetchData(url) {
-      const res = await fetch(url);
-      const data = await res.json();
-      setStockItem(data);
-    }
-    fetchData(url)
-  }, [market, stock]);
-
+  const stockItem = useFetch(`https://market-data-collector.firebaseio.com/market-collector/markets/${market}/${stock}.json`)
+  
   return (
     <div>
       {!stockItem && <p>Loading...</p>}
