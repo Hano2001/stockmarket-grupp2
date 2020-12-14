@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 
 export const IndexDetailsPage = props => {
   const [indexInfo, setIndexInfo] = useState(null);
+  const ticker = props.match.params.ticker;
 
   useEffect(() => {
-    const ticker = props.match.params.ticker;
+    
     const url = `https://market-data-collector.firebaseio.com/market-collector/indexes/se/${ticker}.json`;
 
     fetch(url)
       .then(res => res.json())
       .then(data => setIndexInfo(data));
-  }, []);
+  }, [ticker]);
 
   return (
     <div className="container">

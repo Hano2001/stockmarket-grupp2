@@ -5,6 +5,8 @@ import { IndexDetailsPage } from "./pages/IndexDetailsPage";
 import { MarketListPage } from "./pages/MarketListPage";
 import { StockListPage } from "./pages/StockListPage";
 import { StockDetailPage } from "./pages/StockDetailPage";
+import CryptoDetails from "./pages/CryptoDetails";
+import CryptoList from "./pages/CryptoList";
 
 function App() {
   return (
@@ -16,18 +18,20 @@ function App() {
       <Link to="/markets">Markets</Link>
       <Switch>
         <Route path="/indexes/:ticker" component={IndexDetailsPage} />
-        <Route path="/crypto">crypto</Route>
+
         <Route path="/currencies">currencies</Route>
         <Route path="/indexes/">
           <IndicesPage />
         </Route>
-
+        <Route path="/crypto/:ticker" component={CryptoDetails}></Route>
+        <Route path="/crypto">
+          <CryptoList />
+        </Route>
         <Route path="/markets/:market/:stock" component={StockDetailPage} />
         <Route path="/markets/:market" component={StockListPage} />
         <Route path="/markets">
           <MarketListPage />
         </Route>
-
         <Route path="/"></Route>
       </Switch>
     </div>
