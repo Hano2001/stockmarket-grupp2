@@ -7,6 +7,8 @@ import { StockListPage } from "./pages/StockListPage";
 import { StockDetailPage } from "./pages/StockDetailPage";
 import CryptoDetails from "./pages/CryptoDetails";
 import CryptoList from "./pages/CryptoList";
+import CurrenciesDetailPage from './pages/CurrenciesDetailPage';
+import CurrenciesPage from './pages/CurrenciesPage'
 
 function App() {
   return (
@@ -19,10 +21,17 @@ function App() {
       <Switch>
         <Route path="/indexes/:ticker" component={IndexDetailsPage} />
 
-        <Route path="/currencies">currencies</Route>
+        
         <Route path="/indexes/">
           <IndicesPage />
         </Route>
+
+      <Route path="/currencies/:ticker" component={CurrenciesDetailPage} />
+
+      <Route path="/currencies">
+      <CurrenciesPage />
+      </Route>
+
         <Route path="/crypto/:ticker" component={CryptoDetails}></Route>
         <Route path="/crypto">
           <CryptoList />
