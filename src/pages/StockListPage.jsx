@@ -10,6 +10,7 @@ export const StockListPage = (props) => {
     <>
       {!stockList && <p>Loading...</p>}
       <ul>
+        <h5>{market}</h5>
         {stockList && Object.entries(stockList).map(stock => {
           const [key, value] = stock;
           return (<>
@@ -17,9 +18,11 @@ export const StockListPage = (props) => {
               key={key}
               market={market}
               stock={value.ticker}
-            />
-            <div>{value.today}</div>
-            </>
+            >
+              <p>Price: {value.price} USD</p>
+              <p>% Change: {value.today}%</p>
+            </StockItem>
+          </>
           )
         })}
       </ul>
