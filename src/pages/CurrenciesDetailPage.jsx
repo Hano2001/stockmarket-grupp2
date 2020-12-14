@@ -3,16 +3,17 @@ import React, {useEffect, useState} from 'react'
 export default function CurrenciesDetailPage(props) {
     
     const [currencyItem, setCurrencyItem] = useState(null)
-    console.log(props)
+    
+    const ticker  = props.match.params.ticker
     useEffect(() => {
-        const ticker  = props.match.params.ticker
+        
         const url = `https://market-data-collector.firebaseio.com/market-collector/currencies/sek/${ticker}.json`
     
     fetch(url)
     .then(res => res.json())
     .then(data => setCurrencyItem(data))
     
-    }, [])
+    }, [ticker])
     return (
         <div className="container">
             <div className="row">
