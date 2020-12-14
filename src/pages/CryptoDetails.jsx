@@ -1,17 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
+import { useFetch } from '../hooks/useFetch'
 
 export default function CryptoDetails(props) {
     const id = props.match.params.ticker
-    const[cryptoItem, setCryptoItem] = useState(null)
-    
-
-    useEffect(()=> {
-        const url = `https://market-data-collector.firebaseio.com/market-collector/crypto/usd/${id}.json`;
-
-        fetch(url)
-        .then(res=> res.json())
-        .then(data => setCryptoItem(data))
-    },[id])
+    const url = `https://market-data-collector.firebaseio.com/market-collector/crypto/usd/${id}.json`;
+    const cryptoItem = useFetch(url)
+  
     
     return ( <div>
          {! cryptoItem  && 

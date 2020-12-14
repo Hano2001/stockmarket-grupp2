@@ -1,16 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import CryptoItem from '../components/CryptoItem';
+import { useFetch } from '../hooks/useFetch';
 
 export default function CryptoList() {
-    const [cryptoList, setCryptoList] = useState(null);
-    
-    useEffect(()=>{
-        const url = "https://market-data-collector.firebaseio.com/market-collector/crypto/usd.json"
-
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setCryptoList(data))
-    },[])
+    const url = "https://market-data-collector.firebaseio.com/market-collector/crypto/usd.json"
+    const cryptoList = useFetch(url)
     return (
         <div className="container">
             <h5>Crypto List</h5>
