@@ -3,7 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 
 export const InfoContainer = ({ url, category }) => {
   const data = useFetch(url);
-  
+
   const sortedData = data
     ? Object.values(data).sort((a, b) => b.today - a.today)
     : [];
@@ -14,11 +14,11 @@ export const InfoContainer = ({ url, category }) => {
       <div className="row">
         <div className="col-6">
           <h4>Top gainers today</h4>
-          {sortedData.slice(0, 3).map((obj) => {
+          {sortedData.slice(0, 3).map(obj => {
             return (
               <p>
                 {obj.name}&nbsp;
-                <span className="text-primary">{obj.today}</span>
+                <span className="text-primary">{obj.today}%</span>
               </p>
             );
           })}
@@ -28,11 +28,11 @@ export const InfoContainer = ({ url, category }) => {
           {sortedData
             .slice(-3)
             .reverse()
-            .map((obj) => {
+            .map(obj => {
               return (
                 <p>
-                  {obj.name}&nbsp; 
-                  <span className="text-danger">{obj.today}</span>
+                  {obj.name}&nbsp;
+                  <span className="text-danger">{obj.today}%</span>
                 </p>
               );
             })}
