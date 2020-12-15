@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import checkChange from "../hooks/checkChange";
 import { useFetch } from "../hooks/useFetch";
 
 export const IndexDetailPage = props => {
   const ticker = props.match.params.ticker;
-
+  
   const indexInfo = useFetch(
     `https://market-data-collector.firebaseio.com/market-collector/indexes/se/${ticker}.json`
   );
-
+  
   return (
     <div className="container">
       <Link to={`/indexes`}>
@@ -26,7 +27,7 @@ export const IndexDetailPage = props => {
             <div className="col-md-2">
               Change 1D &nbsp;
               <span
-                className={indexInfo.today > 0 ? "text-primary" : "text-danger"}
+                className={checkChange(indexInfo.today)}
               >
                 {indexInfo.today}
               </span>
@@ -34,7 +35,7 @@ export const IndexDetailPage = props => {
             <div className="col-md-2">
               Change 1W &nbsp;
               <span
-                className={indexInfo.w1 > 0 ? "text-primary" : "text-danger"}
+                className={checkChange(indexInfo.w1)}
               >
                 {indexInfo.w1}
               </span>
@@ -42,7 +43,7 @@ export const IndexDetailPage = props => {
             <div className="col-md-2">
               Change 3Y &nbsp;
               <span
-                className={indexInfo.y3 > 0 ? "text-primary" : "text-danger"}
+                className={checkChange(indexInfo.y3)}
               >
                 {indexInfo.y3}
               </span>
@@ -50,7 +51,7 @@ export const IndexDetailPage = props => {
             <div className="col-md-2">
               Change 5Y &nbsp;
               <span
-                className={indexInfo.y5 > 0 ? "text-primary" : "text-danger"}
+                className={checkChange(indexInfo.y5)}
               >
                 {indexInfo.y5}
               </span>
@@ -58,7 +59,7 @@ export const IndexDetailPage = props => {
             <div className="col-md-2">
               Change YTD &nbsp;
               <span
-                className={indexInfo.ytd > 0 ? "text-primary" : "text-danger"}
+                className={checkChange(indexInfo.ytd)}
               >
                 {indexInfo.ytd}
               </span>
