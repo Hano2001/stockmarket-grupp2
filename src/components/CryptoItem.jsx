@@ -14,5 +14,4 @@ export default function CryptoItem({ item }) {
         <h4 className="col-md-2">{item.today}%</h4>
       </div>
   )
-
 }
