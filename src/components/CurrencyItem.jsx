@@ -5,7 +5,7 @@ export default function CurrencyItem({ currency }) {
   return (
     <div className="container">
       <div className="row shadow-sm p-3 mb-5 bg-white rounded">
-        <h1> Namn: {currency.name}</h1>
+        <h1>{currency.name}</h1>
         <p>({currency.ticker})</p>
         <div className="col-md-4 ml-3">
           <div className="row">
@@ -21,7 +21,7 @@ export default function CurrencyItem({ currency }) {
             className="btn btn-primary btn-block"
             to={`/currencies/${currency.ticker}`}
           >
-            Go to Currencie
+            Go to Currency
           </Link>
         </div>
       </div>
