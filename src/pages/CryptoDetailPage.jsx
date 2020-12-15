@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 
-export default function CryptoDetails(props) {
+export default function CryptoDetailPage(props) {
   const id = props.match.params.ticker;
   const url = `https://market-data-collector.firebaseio.com/market-collector/crypto/usd/${id}.json`;
   const cryptoItem = useFetch(url);

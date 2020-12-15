@@ -2,7 +2,7 @@ import React from "react";
 import IndexItem from "../components/IndexItem";
 import { useFetch } from "../hooks/useFetch";
 
-export const IndicesPage = () => {
+export const IndexListPage = () => {
   const indicesList = useFetch(
     "https://market-data-collector.firebaseio.com/market-collector/indexes/se.json"
   );

@@ -2,7 +2,7 @@ import React from "react";
 import CurrencyItem from "../components/CurrencyItem";
 import { useFetch } from "../hooks/useFetch";
 
-export default function CurrenciesPage() {
+export default function CurrencyListPage() {
   const url =
     "https://market-data-collector.firebaseio.com/market-collector/currencies/sek.json";
   const currenciesList = useFetch(url);

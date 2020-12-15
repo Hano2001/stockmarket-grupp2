@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useFetch } from "../hooks/useFetch";
 
-export default function CurrenciesDetailPage(props) {
+export default function CurrencyDetailPage(props) {
   const ticker = props.match.params.ticker;
   const url = `https://market-data-collector.firebaseio.com/market-collector/currencies/sek/${ticker}.json`;
   const currencyItem = useFetch(url);

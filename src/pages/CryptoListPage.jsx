@@ -2,7 +2,7 @@ import React from "react";
 import CryptoItem from "../components/CryptoItem";
 import { useFetch } from "../hooks/useFetch";
 
-export default function CryptoList() {
+export default function CryptoListPage() {
   const url =
     "https://market-data-collector.firebaseio.com/market-collector/crypto/usd.json";
   const cryptoList = useFetch(url);
