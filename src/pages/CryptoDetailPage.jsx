@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import checkChange from "../hooks/checkChange";
 import { useFetch } from "../hooks/useFetch";
 
 export default function CryptoDetailPage(props) {
@@ -18,10 +19,10 @@ export default function CryptoDetailPage(props) {
         ) : (
           <>
             <div className="col-md-12">
-              <h2>NAME: {cryptoItem.name}</h2>
+              <h2>{cryptoItem.name}</h2>
               <h5>Current Trading At: {cryptoItem.price}</h5>
             </div>
-            <div className="col-md-3">Change 1D: {cryptoItem.today}%</div>
+            <div className="col-md-3">Change 1D: &nbsp;<span className={`${checkChange(cryptoItem.today)}`}> {cryptoItem.today}%</span></div>
             <div className="col-md-3">Source: {cryptoItem.source}</div>
             <div className="col-md-6">Link: {cryptoItem.link}</div>
           </>
