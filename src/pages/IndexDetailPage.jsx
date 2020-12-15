@@ -29,7 +29,7 @@ export const IndexDetailPage = props => {
               <span
                 className={checkChange(indexInfo.today)}
               >
-                {indexInfo.today}
+                {indexInfo.today}%
               </span>
             </div>
             <div className="col-md-4">
@@ -37,7 +37,7 @@ export const IndexDetailPage = props => {
               <span
                 className={checkChange(indexInfo.w1)}
               >
-                {indexInfo.w1}
+                {indexInfo.w1}%
               </span>
             </div>
             <div className="col-md-4">
@@ -45,7 +45,7 @@ export const IndexDetailPage = props => {
               <span
                 className={checkChange(indexInfo.mtd)}
               >
-                {indexInfo.mtd}
+                {indexInfo.mtd}%
               </span>
             </div>
             <div className="col-md-4">
@@ -53,7 +53,7 @@ export const IndexDetailPage = props => {
               <span
                 className={checkChange(indexInfo.y3)}
               >
-                {indexInfo.y3}
+                {indexInfo.y3}%
               </span>
             </div>
             <div className="col-md-4">
@@ -61,7 +61,7 @@ export const IndexDetailPage = props => {
               <span
                 className={checkChange(indexInfo.y5)}
               >
-                {indexInfo.y5}
+                {indexInfo.y5}%
               </span>
             </div>
             <div className="col-md-4">
@@ -69,7 +69,7 @@ export const IndexDetailPage = props => {
               <span
                 className={checkChange(indexInfo.ytd)}
               >
-                {indexInfo.ytd}
+                {indexInfo.ytd}%
               </span>
             </div>
           </>
