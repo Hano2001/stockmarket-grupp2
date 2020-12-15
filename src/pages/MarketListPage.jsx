@@ -9,7 +9,7 @@ export const MarketListPage = () => {
   return (
     <>
       {!marketList && <p>Loading...</p>}
-      <ul>
+      <ul className="list-unstyled">
         {marketList && Object.keys(marketList).map(marketName => {
           return (
            <MarketItem key={marketName} marketName={marketName}/>

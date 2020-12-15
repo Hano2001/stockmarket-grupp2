@@ -1,14 +1,14 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { IndicesPage } from "./pages/IndicesPage";
-import { IndexDetailsPage } from "./pages/IndexDetailsPage";
+import { IndexListPage } from "./pages/IndexListPage";
+import { IndexDetailPage } from "./pages/IndexDetailPage";
 import { MarketListPage } from "./pages/MarketListPage";
 import { StockListPage } from "./pages/StockListPage";
 import { StockDetailPage } from "./pages/StockDetailPage";
-import CryptoDetails from "./pages/CryptoDetails";
-import CryptoList from "./pages/CryptoList";
-import CurrenciesDetailPage from "./pages/CurrenciesDetailPage";
-import CurrenciesPage from "./pages/CurrenciesPage";
+import CryptoDetailPage from "./pages/CryptoDetailPage";
+import CryptoListPage from "./pages/CryptoListPage";
+import CurrencyDetailPage from "./pages/CurrencyDetailPage";
+import CurrencyListPage from "./pages/CurrencyListPage";
 import Navbar from "./components/Navbar";
 import {FrontPage} from "./pages/FrontPage"
 
@@ -17,21 +17,21 @@ function App() {
     <div className="container">
       <Navbar />
       <Switch>
-        <Route path="/indexes/:ticker" component={IndexDetailsPage} />
+        <Route path="/indexes/:ticker" component={IndexDetailPage} />
 
         <Route path="/indexes/">
-          <IndicesPage />
+          <IndexListPage />
         </Route>
 
-        <Route path="/currencies/:ticker" component={CurrenciesDetailPage} />
+        <Route path="/currencies/:ticker" component={CurrencyDetailPage} />
 
         <Route path="/currencies">
-          <CurrenciesPage />
+          <CurrencyListPage />
         </Route>
 
-        <Route path="/crypto/:ticker" component={CryptoDetails}></Route>
+        <Route path="/crypto/:ticker" component={CryptoDetailPage}></Route>
         <Route path="/crypto">
-          <CryptoList />
+          <CryptoListPage />
         </Route>
         <Route path="/markets/:market/:stock" component={StockDetailPage} />
         <Route path="/markets/:market" component={StockListPage} />

@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export const StockItem = ({ market, stock, children }) => {
+export const StockItem = ({ market, stock }) => {
   return (
-    <li
-      className="border p-2">
-      <Link to={`/markets/${market}/${stock}`}>
-        {stock}
+    <li className="row shadow-sm mb-5 bg-white rounded">
+      <Link className="col-md-5" to={`/markets/${market}/${stock.ticker}`}>
+        <h4>{stock.name}</h4>
       </Link>
-      {children}
+      <h4 className="col-md-5">{stock.price} USD</h4>
+      <h4 className="col-md-2">{stock.today}%</h4>
     </li>
-  )
-}
+  );
+};

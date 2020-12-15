@@ -19,7 +19,7 @@ export const StockDetailPage = (props) => {
             <h5>/ {market}</h5>
           </Link>
           <h1>{stockItem.name}</h1>
-          <ul>
+          <ul className="list-unstyled">
             <li>Price: {stockItem.price} USD</li>
             <li>% Change: {stockItem.today}%</li>
             <li>1 Week: {stockItem.w1}%</li>
