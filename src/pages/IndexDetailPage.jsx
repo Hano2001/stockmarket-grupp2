@@ -24,7 +24,7 @@ export const IndexDetailPage = props => {
               <h2>{indexInfo.name}</h2>
               <h5>Current trading at: €{indexInfo.price}</h5>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-4 mb-2">
               Change 1D &nbsp;
               <span
                 className={checkChange(indexInfo.today)}
@@ -32,7 +32,7 @@ export const IndexDetailPage = props => {
                 {indexInfo.today}
               </span>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-4">
               Change 1W &nbsp;
               <span
                 className={checkChange(indexInfo.w1)}
@@ -40,7 +40,15 @@ export const IndexDetailPage = props => {
                 {indexInfo.w1}
               </span>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-4">
+              Change 1M &nbsp;
+              <span
+                className={checkChange(indexInfo.mtd)}
+              >
+                {indexInfo.mtd}
+              </span>
+            </div>
+            <div className="col-md-4">
               Change 3Y &nbsp;
               <span
                 className={checkChange(indexInfo.y3)}
@@ -48,7 +56,7 @@ export const IndexDetailPage = props => {
                 {indexInfo.y3}
               </span>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-4">
               Change 5Y &nbsp;
               <span
                 className={checkChange(indexInfo.y5)}
@@ -56,7 +64,7 @@ export const IndexDetailPage = props => {
                 {indexInfo.y5}
               </span>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-4">
               Change YTD &nbsp;
               <span
                 className={checkChange(indexInfo.ytd)}
