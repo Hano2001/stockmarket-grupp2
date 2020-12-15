@@ -12,7 +12,7 @@ export const StockListPage = props => {
   return (
     <div className="container">
       <Link to={`/markets`}>
-        <h5>Markets</h5>
+        <h5>Back to Market List</h5>
       </Link>
       <h5>/ {market}</h5>
       <div className="row">

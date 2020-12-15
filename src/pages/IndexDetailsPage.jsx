@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 
 export const IndexDetailsPage = props => {
@@ -10,6 +11,9 @@ export const IndexDetailsPage = props => {
 
   return (
     <div className="container">
+      <Link to={`/indexes`}>
+        <h5>Back to Index List</h5>
+      </Link>
       <div className="row">
         {!indexInfo ? (
           <p>Loading...</p>
