@@ -10,6 +10,7 @@ import CryptoList from "./pages/CryptoList";
 import CurrenciesDetailPage from "./pages/CurrenciesDetailPage";
 import CurrenciesPage from "./pages/CurrenciesPage";
 import Navbar from "./components/Navbar";
+import {FrontPage} from "./pages/FrontPage"
 
 function App() {
   return (
@@ -37,7 +38,9 @@ function App() {
         <Route path="/markets">
           <MarketListPage />
         </Route>
-        <Route path="/"></Route>
+        <Route path="/">
+          <FrontPage />
+        </Route>
       </Switch>
     </div>
   );
