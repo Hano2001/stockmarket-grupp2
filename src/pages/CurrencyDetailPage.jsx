@@ -10,7 +10,7 @@ export default function CurrencyDetailPage(props) {
   const currencyItem = useFetch(url);
 
   return (
-    <div className="container">
+    <div>
       <Link to={`/currencies`}>
         <h5>Back to Currency List</h5>
       </Link>

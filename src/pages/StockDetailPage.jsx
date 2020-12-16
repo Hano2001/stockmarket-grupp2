@@ -10,29 +10,74 @@ export const StockDetailPage = (props) => {
   const stock = props.match.params.stock;
   const stockItem = useFetch(`https://market-data-collector.firebaseio.com/market-collector/markets/${market}/${stock}.json`)
 
-  return (
-    <div>
-      {!stockItem && <p>Loading...</p>}
-      {stockItem &&
-        <>
-          <Link to={`/markets`}>
+    return (
+      <div>
+        <Link to={`/markets`}>
             <h5>Markets</h5>
           </Link>
           <Link to={`/markets/${market}`}>
             <h5>/ {titleCaseName}</h5>
           </Link>
-          <h1>{stockItem.name}</h1>
-          <ul className="list-unstyled">
-            <li>Price: {stockItem.price} USD</li>
-            <li>% Change: &nbsp; <span className={`${checkChange(stockItem.today)}`}>{stockItem.today}%</span> </li>
-            <li>1 Week: &nbsp; <span className={`${checkChange(stockItem.w1)}`}>{stockItem.w1}%</span> </li>
-            <li>Month-to-Date: &nbsp; <span className={`${checkChange(stockItem.mtd)}`}> {stockItem.mtd}%</span></li>
-            <li>Year-to-Date: &nbsp; <span className={`${checkChange(stockItem.ytd)}`}>{stockItem.ytd}%</span></li>
-            <li>3 Years: &nbsp; <span className={`${checkChange(stockItem.y3)}`}> {stockItem.y3}%</span></li>
-            <li>5 Years: &nbsp; <span className={`${checkChange(stockItem.y5)}`}> {stockItem.y5}%</span></li>
-          </ul>
-        </>
-      }
-    </div>
-  )
+        <div className="row">
+          {!stockItem ? (
+            <p>Loading...</p>
+          ) : (
+            <>  <div className="col-12">
+                <h2 >{stockItem.name}</h2>
+                <h5 >Current trading at: €{stockItem.price}</h5>
+                </div>
+              <div className="col-sm-4 mb-2">
+                Change 1D &nbsp;
+                <span
+                  className={checkChange(stockItem.today)}
+                >
+                  {stockItem.today}%
+                </span>
+              </div>
+              <div className="col-sm-4 mb-2">
+                Change 1W &nbsp;
+                <span
+                  className={checkChange(stockItem.w1)}
+                >
+                  {stockItem.w1}%
+                </span>
+              </div>
+              <div className="col-sm-4 mb-2">
+                Change 1M &nbsp;
+                <span
+                  className={checkChange(stockItem.mtd)}
+                >
+                  {stockItem.mtd}%
+                </span>
+              </div>
+              <div className="col-sm-4 mb-2">
+                Change 3Y &nbsp;
+                <span
+                  className={checkChange(stockItem.y3)}
+                >
+                  {stockItem.y3}%
+                </span>
+              </div>
+              <div className="col-sm-4 mb-2">
+                Change 5Y &nbsp;
+                <span
+                  className={checkChange(stockItem.y5)}
+                >
+                  {stockItem.y5}%
+                </span>
+              </div>
+              <div className="col-sm-4 mb-2">
+                Change YTD &nbsp;
+                <span
+                  className={checkChange(stockItem.ytd)}
+                >
+                  {stockItem.ytd}%
+                </span>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    );
+         
 }

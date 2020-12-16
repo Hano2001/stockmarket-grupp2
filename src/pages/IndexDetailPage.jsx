@@ -20,8 +20,10 @@ export const IndexDetailPage = props => {
           <p>Loading...</p>
         ) : (
           <>
+            <div className="col-12">
               <h2>{indexInfo.name}</h2>
               <h5>Current trading at: €{indexInfo.price}</h5>
+            </div>
             <div className="col-sm-4 mb-2">
               Change 1D &nbsp;
               <span
