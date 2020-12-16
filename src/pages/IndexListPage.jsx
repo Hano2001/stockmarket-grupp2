@@ -8,12 +8,12 @@ export const IndexListPage = () => {
   );
 
   return (
-    <div className="container">
+    <div>
       <h4>Index List</h4>
       <div className="row">
-        <h6 className="col-md-5">Name</h6>
-        <h6 className="col-md-5">Price</h6>
-        <h6 className="col-md-2">Change 1 day</h6>
+        <h6 className="col-5">Name</h6>
+        <h6 className="col-4">Price</h6>
+        <h6 className="col-1">Change 1 day</h6>
       </div>
       <ul className="list-unstyled">
         {!indicesList && <p>Loading...</p>}

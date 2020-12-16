@@ -8,12 +8,12 @@ export default function CurrencyListPage() {
   const currenciesList = useFetch(url);
 
   return (
-    <div className="container">
+    <div>
       <h5>Currency List</h5>
       <div className="row">
-        <h6 className="col-sm-5">Name</h6>
-        <h6 className="col-sm-5">Price</h6>
-        <h6 className="col-sm-2">Change 1 day</h6>
+        <h6 className="col-5">Name</h6>
+        <h6 className="col-4">Price</h6>
+        <h6 className="col-1">Change 1 day</h6>
       </div>
       <ul className="list-unstyled">
         {!currenciesList && <p>Loading</p>}

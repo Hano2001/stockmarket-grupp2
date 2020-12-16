@@ -7,12 +7,12 @@ export default function CryptoListPage() {
     "https://market-data-collector.firebaseio.com/market-collector/crypto/usd.json";
   const cryptoList = useFetch(url);
   return (
-    <div className="container">
+    <div>
       <h5>Crypto List</h5>
       <div className="row">
-        <h6 className="col-md-5">Name</h6>
-        <h6 className="col-md-5">Price</h6>
-        <h6 className="col-md-2">Change 1 day</h6>
+        <h6 className="col-5">Name</h6>
+        <h6 className="col-4">Price</h6>
+        <h6 className="col-1">Change 1 day</h6>
       </div>
       <ul className="list-unstyled">
         {!cryptoList && <p>Loading...</p>}

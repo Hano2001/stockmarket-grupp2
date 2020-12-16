@@ -16,7 +16,7 @@ export const InfoContainer = ({ url, category }) => {
           <h4>Top gainers today</h4>
           {sortedData.slice(0, 3).map(obj => {
             return (
-              <p>
+              <p key={obj.name}>
                 {obj.name}&nbsp;
                 <span className="text-primary">{obj.today}%</span>
               </p>
@@ -30,7 +30,7 @@ export const InfoContainer = ({ url, category }) => {
             .reverse()
             .map(obj => {
               return (
-                <p>
+                <p key={obj.name}>
                   {obj.name}&nbsp;
                   <span className="text-danger">{obj.today}%</span>
                 </p>
