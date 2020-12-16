@@ -18,7 +18,7 @@ export const InfoContainer = ({ url, category }) => {
             return (
               <p key={obj.name}>
                 {obj.name}&nbsp;
-                <span className="text-primary">{obj.today}%</span>
+                <span className="text-success">{obj.today}%</span>
               </p>
             );
           })}
