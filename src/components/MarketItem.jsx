@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { makeTitleCase } from "./makeTitleCase";
 
 export const MarketItem = ({ marketName }) => {
+  const titleCaseName = makeTitleCase(marketName);
   return (
     <li className="shadow-sm mb-5 bg-white rounded" key={marketName}>
       <Link to={`/markets/${marketName}`}>
-        <h4>{marketName}</h4>
+        <h4>{titleCaseName}</h4>
       </Link>
     </li>
   );
