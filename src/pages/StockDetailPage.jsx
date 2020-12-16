@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { makeTitleCase } from '../components/makeTitleCase';
 import checkChange from '../hooks/checkChange';
 import { useFetch } from '../hooks/useFetch';
 
 export const StockDetailPage = (props) => {
   const market = props.match.params.market;
+  const titleCaseName = makeTitleCase(market);
   const stock = props.match.params.stock;
   const stockItem = useFetch(`https://market-data-collector.firebaseio.com/market-collector/markets/${market}/${stock}.json`)
 
@@ -17,7 +19,7 @@ export const StockDetailPage = (props) => {
             <h5>Markets</h5>
           </Link>
           <Link to={`/markets/${market}`}>
-            <h5>/ {market}</h5>
+            <h5>/ {titleCaseName}</h5>
           </Link>
           <h1>{stockItem.name}</h1>
           <ul className="list-unstyled">

@@ -12,7 +12,10 @@ export const MarketListPage = () => {
       <ul className="list-unstyled">
         {marketList && Object.keys(marketList).map(marketName => {
           return (
-           <MarketItem key={marketName} marketName={marketName}/>
+           <MarketItem 
+            key={marketName}
+            marketName={marketName}
+          />
           )
         })}
       </ul>
