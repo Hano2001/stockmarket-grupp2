@@ -1,5 +1,6 @@
 import React from "react";
 import IndexItem from "../components/IndexItem";
+import ListHeading from "../components/ListHeading";
 import { useFetch } from "../hooks/useFetch";
 
 export const IndexListPage = () => {
@@ -10,11 +11,7 @@ export const IndexListPage = () => {
   return (
     <div>
       <h4>Index List</h4>
-      <div className="row">
-        <h6 className="col-5">Name</h6>
-        <h6 className="col-4">Price</h6>
-        <h6 className="col-1">Change 1 day</h6>
-      </div>
+      <ListHeading />
       <ul className="list-unstyled">
         {!indicesList && <p>Loading...</p>}
         {indicesList &&

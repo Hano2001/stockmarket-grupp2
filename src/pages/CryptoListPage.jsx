@@ -1,5 +1,6 @@
 import React from "react";
 import CryptoItem from "../components/CryptoItem";
+import ListHeading from "../components/ListHeading";
 import { useFetch } from "../hooks/useFetch";
 
 export default function CryptoListPage() {
@@ -9,11 +10,7 @@ export default function CryptoListPage() {
   return (
     <div>
       <h5>Crypto List</h5>
-      <div className="row">
-        <h6 className="col-5">Name</h6>
-        <h6 className="col-4">Price</h6>
-        <h6 className="col-1">Change 1 day</h6>
-      </div>
+      <ListHeading />
       <ul className="list-unstyled">
         {!cryptoList && <p>Loading...</p>}
         {cryptoList &&

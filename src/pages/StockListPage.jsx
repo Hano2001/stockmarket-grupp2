@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ListHeading from "../components/ListHeading";
 import { makeTitleCase } from "../components/makeTitleCase";
 import { StockItem } from "../components/StockItem";
 import { useFetch } from "../hooks/useFetch";
@@ -17,11 +18,7 @@ export const StockListPage = props => {
         <h5>Back to Market List</h5>
       </Link>
       <h5>/ {titleCaseName}</h5>
-      <div className="row">
-        <h6 className="col-5">Name</h6>
-        <h6 className="col-4">Price</h6>
-        <h6 className="col-1">Change 1 day</h6>
-      </div>
+      <ListHeading />
       <ul className="list-unstyled">
         {!stockList && <p>Loading...</p>}
         {stockList &&
