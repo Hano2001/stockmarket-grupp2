@@ -16,7 +16,10 @@ export const FrontPage = () => {
         url="https://market-data-collector.firebaseio.com/market-collector/indexes/se.json"
         category="Index"
       />
-      {/* <InfoContainer url="https://market-data-collector.firebaseio.com/market-collector/markets/stockholmsborsen.json" category="Stockholmsbörsen" /> */}
+      <InfoContainer
+        url="https://market-data-collector.firebaseio.com/market-collector/markets/stockholmsborsen.json"
+        category="Stockholmsbörsen"
+      />
     </>
   );
 };
