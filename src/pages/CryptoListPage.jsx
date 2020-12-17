@@ -1,7 +1,7 @@
 import React from "react";
 import CryptoItem from "../components/CryptoItem";
 import ListHeading from "../components/ListHeading";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../utilities/useFetch";
 
 export default function CryptoListPage() {
   const url =

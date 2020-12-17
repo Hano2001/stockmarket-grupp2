@@ -1,6 +1,6 @@
 import React from 'react';
 import { MarketItem } from '../components/MarketItem';
-import {useFetch} from '../hooks/useFetch'
+import { useFetch } from '../utilities/useFetch'
 
 export const MarketListPage = () => {
 

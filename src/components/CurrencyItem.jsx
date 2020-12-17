@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import checkChange from "../hooks/checkChange";
+import checkChange from "../utilities/checkChange";
 
 export default function CurrencyItem({ currency }) {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import IndexItem from "../components/IndexItem";
 import ListHeading from "../components/ListHeading";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../utilities/useFetch";
 
 export const IndexListPage = () => {
   const indicesList = useFetch(

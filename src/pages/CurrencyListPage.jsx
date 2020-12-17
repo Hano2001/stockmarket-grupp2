@@ -1,7 +1,7 @@
 import React from "react";
 import CurrencyItem from "../components/CurrencyItem";
 import ListHeading from "../components/ListHeading";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../utilities/useFetch";
 
 export default function CurrencyListPage() {
   const url =

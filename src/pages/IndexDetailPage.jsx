@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Details from "../components/Details";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../utilities/useFetch";
 
 export const IndexDetailPage = props => {
   const ticker = props.match.params.ticker;

@@ -1,6 +1,6 @@
 import React from "react";
-import checkChange from "../hooks/checkChange";
-import changeCurrency from "../hooks/changeCurrency";
+import checkChange from "../utilities/checkChange";
+import changeCurrency from "../utilities/changeCurrency";
 
 export default function Details({ props }) {
   const currency = changeCurrency(props.market);

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import checkChange from "../hooks/checkChange";
-import { useFetch } from "../hooks/useFetch";
-import changeCurrency from "../hooks/changeCurrency";
+import checkChange from "../utilities/checkChange";
+import { useFetch } from "../utilities/useFetch";
+import changeCurrency from "../utilities/changeCurrency";
 
 export default function CryptoDetailPage(props) {
   const id = props.match.params.ticker;

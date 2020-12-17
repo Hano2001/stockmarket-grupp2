@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../utilities/useFetch";
 
 export const InfoContainer = ({ url, category }) => {
   const data = useFetch(url);

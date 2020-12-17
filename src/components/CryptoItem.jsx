@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import checkChange from "../hooks/checkChange";
-import changeCurrency from "../hooks/changeCurrency";
+import checkChange from "../utilities/checkChange";
+import changeCurrency from "../utilities/changeCurrency";
 
 export default function CryptoItem({ item }) {
   const currency = changeCurrency(item.market);
