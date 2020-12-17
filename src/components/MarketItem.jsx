@@ -7,7 +7,7 @@ export const MarketItem = ({ marketName }) => {
   return (
     <li className="shadow-sm mb-5 bg-white rounded" key={marketName}>
       <Link to={`/markets/${marketName}`}>
-        <h4>{titleCaseName}</h4>
+        <h6>{titleCaseName}</h6>
       </Link>
     </li>
   );

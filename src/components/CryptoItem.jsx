@@ -9,13 +9,13 @@ export default function CryptoItem({ item }) {
   return (
     <li className="row shadow-sm mb-5 bg-white rounded">
       <Link className="col-5" to={`/crypto/${item.ticker}`}>
-        <h4>{item.name}</h4>
+        <h6>{item.name}</h6>
       </Link>
-      <h4 className="col-4">
+      <h6 className="col-4">
         {" "}
         {item.price} {currency}
-      </h4>
-      <h4 className={`col-1 ${checkChange(item.today)}`}>{item.today}%</h4>
+      </h6>
+      <h6 className={`col-1 ${checkChange(item.today)}`}>{item.today}%</h6>
     </li>
   );
 }

@@ -9,13 +9,13 @@ export const StockItem = ({ market, stock }) => {
   return (
     <li className="row shadow-sm mb-5 bg-white rounded">
       <Link className="col-5" to={`/markets/${market}/${stock.ticker}`}>
-        <h4>{stock.name}</h4>
+        <h6>{stock.name}</h6>
       </Link>
-      <h4 className="col-4">
+      <h6 className="col-4">
         {stock.price}
         {currency}
-      </h4>
-      <h4 className={`col-1 ${checkChange(stock.today)}`}>{stock.today}%</h4>
+      </h6>
+      <h6 className={`col-1 ${checkChange(stock.today)}`}>{stock.today}%</h6>
     </li>
   );
 };
